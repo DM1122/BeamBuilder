@@ -4,7 +4,7 @@ import turtle
 import veclib
 
 size = [1000,500]
-scl = 1100                    # every meter represents scl pixels
+scl = 1                    # every meter represents scl pixels
 pen = 1
 vel = 10
 axes = [1,1]
@@ -48,7 +48,7 @@ def draw_axes():
 def draw_section(section):
     tim.penup()
     tim.goto(veclib.scal(section.pos,scl))
-    tim.dot(5,'red')
+    tim.dot(5,'blue')
 
     tim.penup()
 
@@ -67,7 +67,13 @@ def draw_section(section):
     tim.forward(section.b*scl)
 
     tim.penup()
-    
+
+def draw_com(struct):
+    tim.penup()
+    tim.goto(veclib.scal(struct.com,scl))
+    tim.dot(5,'red')
+
+
 def hide():
     tim.hideturtle()
 
